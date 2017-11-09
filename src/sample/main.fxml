@@ -7,67 +7,64 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<VBox fx:id="root" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #6DBCDB;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
-    <children>
-        <HBox fx:id="navigation" alignment="CENTER_RIGHT">
-            <children>
-                <JFXButton fx:id="minimizeButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#minimizeWindow">
-                    <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icons/window-minimize.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                    <HBox.margin>
-                        <Insets top="5.0" />
-                    </HBox.margin></JFXButton>
-                <JFXButton fx:id="closeButton" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#closeWindow">
-                    <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icons/ic_close_black_24dp/ic_close_black_24dp_1x.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                    </HBox.margin></JFXButton>
-            </children>
-        </HBox>
-        <VBox alignment="CENTER">
-            <children>
-                <Text fill="#d7dadb" strokeType="OUTSIDE" strokeWidth="0.0" text="Crypto">
-                    <font>
-                        <Font size="60.0" />
-                    </font>
-                </Text>
-            </children>
-        </VBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-            <children>
-                <JFXButton fx:id="rsaButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" onAction="#goToRSA" prefWidth="200.0" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="RSAwithSHA256" textFill="#d7dadb">
-                    <HBox.margin>
-                        <Insets right="25.0" />
-                    </HBox.margin>
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton fx:id="bcryptButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" onAction="#goToBCrypt" prefWidth="200.0" ripplerFill="#d7dadb" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="BCrypt" textFill="#d7dadb">
-                    <HBox.margin>
-                        <Insets left="25.0" />
-                    </HBox.margin>
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </JFXButton>
-            </children>
-        </HBox>
-    </children>
+<?import java.net.URL?>
+<VBox id="root" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0"
+      xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+    <stylesheets>
+        <URL value="@css/style.css"/>
+    </stylesheets>
+    <HBox alignment="CENTER_RIGHT">
+        <JFXButton fx:id="minimizeButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false"
+                   onAction="#minimizeWindow">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/window-minimize.png"/>
+                </ImageView>
+            </graphic>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <HBox.margin>
+                <Insets top="5.0"/>
+            </HBox.margin>
+        </JFXButton>
+        <JFXButton fx:id="closeButton" contentDisplay="GRAPHIC_ONLY" focusTraversable="false"
+                   onAction="#closeWindow">
+            <graphic>
+                <ImageView pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/ic_close_black_24dp/ic_close_black_24dp_1x.png"/>
+                </ImageView>
+            </graphic>
+            <HBox.margin>
+                <Insets right="5.0" top="5.0"/>
+            </HBox.margin>
+        </JFXButton>
+    </HBox>
+    <VBox alignment="CENTER">
+    </VBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <JFXButton fx:id="rsaButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER"
+                   focusTraversable="false" onAction="#goToRSA" prefWidth="200.0"
+                   style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="RSAwithSHA256"
+                   textFill="#d7dadb">
+            <HBox.margin>
+                <Insets right="25.0"/>
+            </HBox.margin>
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="bcryptButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER"
+                   focusTraversable="false" onAction="#goToBCrypt" prefWidth="200.0" ripplerFill="#d7dadb"
+                   style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="BCrypt"
+                   textFill="#d7dadb">
+            <HBox.margin>
+                <Insets left="25.0"/>
+            </HBox.margin>
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </JFXButton>
+    </HBox>
 </VBox>
