@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TemplateController">
+    <stylesheets>
+        <URL value="@css/style.css" />
+    </stylesheets>
+    <HBox alignment="CENTER_RIGHT">
+        <JFXButton fx:id="minimizeButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#minimizeWindow">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/window-minimize.png" />
+                </ImageView>
+            </graphic>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <HBox.margin>
+                <Insets top="5.0" />
+            </HBox.margin>
+        </JFXButton>
+        <JFXButton fx:id="closeButton" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#closeWindow">
+            <graphic>
+                <ImageView pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/ic_close_black_24dp/ic_close_black_24dp_1x.png" />
+                </ImageView>
+            </graphic>
+            <HBox.margin>
+                <Insets right="5.0" top="5.0" />
+            </HBox.margin>
+        </JFXButton>
+    </HBox>
+    <Pane fx:id="content">
+        <fx:include fx:id="main" source="main.fxml"/>
+    </Pane>
+</VBox>
