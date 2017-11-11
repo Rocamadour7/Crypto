@@ -18,28 +18,14 @@ public class RSAController implements Initializable {
     private RSA rsa;
     private PublicKey publicKey;
     private PrivateKey privateKey;
-    StringBuffer[] hexKeys;
-    String cypherMessage;
+    private StringBuffer[] hexKeys;
+    private String cipherMessage;
 
     @FXML private TextField publicKeyField;
     @FXML private TextField privateKeyField;
     @FXML private TextField messageField;
     @FXML private TextField encryptedMessageField;
     @FXML private TextArea decryptedMessageField;
-    @FXML private Button minimizeButton;
-    @FXML private Button closeButton;
-
-    @FXML
-    private void closeWindow() {
-        Stage stage = (Stage) closeButton.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    private void minimizeWindow() {
-        Stage stage = (Stage) minimizeButton.getScene().getWindow();
-        stage.setIconified(true);
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -64,8 +50,8 @@ public class RSAController implements Initializable {
     private void onEncrypt() {
         String message = messageField.getText();
         try {
-            cypherMessage = rsa.encrypt(message, publicKey);
-            encryptedMessageField.setText(cypherMessage);
+            cipherMessage = rsa.encrypt(message, publicKey);
+            encryptedMessageField.setText(cipherMessage);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,8 +60,8 @@ public class RSAController implements Initializable {
     @FXML
     private void onDecrypt() {
         try {
-            String decypherMessage = rsa.decrypt(cypherMessage, privateKey);
-            decryptedMessageField.setText(decypherMessage);
+            String decipherMessage = rsa.decrypt(cipherMessage, privateKey);
+            decryptedMessageField.setText(decipherMessage);
         } catch (Exception e) {
             e.printStackTrace();
         }

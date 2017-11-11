@@ -12,34 +12,14 @@ import java.io.IOException;
 
 public class MainController {
 
-    @FXML private Button minimizeButton;
-    @FXML private Button closeButton;
-    @FXML private Button rsaButton;
-    @FXML private Button bcryptButton;
+    private TemplateController templateController;
 
-    TemplateController templateController;
-
-    @FXML
-    private void initialize() throws IOException {
-    }
-
-    public void injectTemplateController(TemplateController templateController) {
+    void injectTemplateController(TemplateController templateController) {
         this.templateController = templateController;
     }
 
     @FXML
     private void goToRSA() {
-//        Stage stage;
-//        Parent root;
-//        stage=(Stage) rsaButton.getScene().getWindow();
-//        try {
-//            root = FXMLLoader.load(getClass().getResource("RSA.fxml"));
-//            Scene scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         templateController.show("RSA.fxml");
     }
 

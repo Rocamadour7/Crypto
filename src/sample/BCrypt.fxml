@@ -5,11 +5,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane  xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BCryptController">
+<VBox alignment="TOP_CENTER" prefHeight="563.0" prefWidth="800.0" style="-fx-background-color: #6DBCDB;"
+      xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.BCryptController">
     <VBox alignment="CENTER">
         <Text fill="#d7dadb" strokeType="OUTSIDE" strokeWidth="0.0" text="BCrypt">
             <font>
@@ -22,23 +23,22 @@
             <Insets top="20.0"/>
         </VBox.margin>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-            <children>
-                <JFXTextField fx:id="messageField" focusColor="#fc4349" labelFloat="true" promptText="Message"
-                              unFocusColor="#d7dadb" HBox.hgrow="ALWAYS">
-                    <HBox.margin>
-                        <Insets left="50.0" right="20.0"/>
-                    </HBox.margin>
-                </JFXTextField>
-                <JFXTextField fx:id="encryptedMessageField" editable="false" focusColor="#fc4349" labelFloat="true"
-                              promptText="Encrypted Message" unFocusColor="#d7dadb" HBox.hgrow="ALWAYS">
-                    <HBox.margin>
-                        <Insets left="20.0" right="50.0"/>
-                    </HBox.margin>
-                </JFXTextField>
-            </children>
+            <JFXTextField fx:id="messageField" focusColor="#fc4349" labelFloat="true" promptText="Message"
+                          unFocusColor="#d7dadb" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="50.0" right="20.0"/>
+                </HBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="encryptedMessageField" editable="false" focusColor="#fc4349" labelFloat="true"
+                          promptText="Encrypted Message" unFocusColor="#d7dadb" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="20.0" right="50.0"/>
+                </HBox.margin>
+            </JFXTextField>
         </HBox>
-        <JFXButton fx:id="encryptButton" buttonType="RAISED" onAction="#onEncrypt" prefHeight="50.0" prefWidth="200.0"
-                   style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Encrypt" textFill="#d7dadb">
+        <JFXButton buttonType="RAISED" onAction="#onEncrypt" prefHeight="50.0"
+                   prefWidth="200.0" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Encrypt"
+                   textFill="#d7dadb">
             <VBox.margin>
                 <Insets/>
             </VBox.margin>
@@ -48,30 +48,28 @@
         </JFXButton>
     </VBox>
     <VBox alignment="CENTER" layoutX="10.0" layoutY="137.0" prefHeight="200.0" prefWidth="100.0">
-        <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                <children>
-                    <JFXTextField fx:id="verificationMessageField" focusColor="#fc4349" labelFloat="true" promptText="Validation Message" unFocusColor="#d7dadb" HBox.hgrow="ALWAYS">
-                        <HBox.margin>
-                            <Insets left="50.0" right="20.0" />
-                        </HBox.margin>
-                    </JFXTextField>
-                    <JFXButton fx:id="verifyButton" onAction="#onVerify" prefWidth="150.0" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Verify" textFill="#d7dadb">
-                        <font>
-                            <Font size="14.0" />
-                        </font>
-                        <HBox.margin>
-                            <Insets left="20.0" right="50.0" />
-                        </HBox.margin>
-                    </JFXButton>
-                </children>
-            </HBox>
-            <Text fx:id="verificationText" fill="#2c3e50" strokeType="OUTSIDE" strokeWidth="0.0">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <JFXTextField fx:id="verificationMessageField" focusColor="#fc4349" labelFloat="true"
+                          promptText="Validation Message" unFocusColor="#d7dadb" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="50.0" right="20.0"/>
+                </HBox.margin>
+            </JFXTextField>
+            <JFXButton onAction="#onVerify" prefWidth="150.0"
+                       style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Verify"
+                       textFill="#d7dadb">
                 <font>
-                    <Font size="17.0" />
+                    <Font size="14.0"/>
                 </font>
-            </Text>
-        </children>
+                <HBox.margin>
+                    <Insets left="20.0" right="50.0"/>
+                </HBox.margin>
+            </JFXButton>
+        </HBox>
+        <Text fx:id="verificationText" fill="#2c3e50" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="17.0"/>
+            </font>
+        </Text>
     </VBox>
-
-</Pane>
+</VBox>
