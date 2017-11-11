@@ -27,4 +27,9 @@ public class MainController {
     private void goToBCrypt() {
         templateController.show("BCrypt.fxml");
     }
+
+    @FXML
+    private void goToCaesar() {
+        templateController.show("Caesar.fxml");
+    }
 }

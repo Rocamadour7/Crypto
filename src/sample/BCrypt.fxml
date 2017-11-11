@@ -12,6 +12,9 @@
       xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="sample.BCryptController">
     <VBox alignment="CENTER">
+        <VBox.margin>
+            <Insets top="10.0"/>
+        </VBox.margin>
         <Text fill="#d7dadb" strokeType="OUTSIDE" strokeWidth="0.0" text="BCrypt">
             <font>
                 <Font size="48.0"/>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0"
+      prefWidth="800.0" style="-fx-background-color: #6DBCDB;" xmlns="http://javafx.com/javafx/9"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CaesarController">
+    <VBox alignment="CENTER">
+        <Text fill="#d7dadb" strokeType="OUTSIDE" strokeWidth="0.0" text="Caesar">
+            <font>
+                <Font size="48.0"/>
+            </font>
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Text>
+    </VBox>
+    <VBox alignment="CENTER">
+        <VBox.margin>
+            <Insets bottom="20.0" top="20.0"/>
+        </VBox.margin>
+        <JFXTextField fx:id="keyField" focusColor="#fc4349" promptText="Key" unFocusColor="#d7dadb">
+            <VBox.margin>
+                <Insets left="100.0" right="100.0"/>
+            </VBox.margin>
+        </JFXTextField>
+        <JFXButton alignment="CENTER" buttonType="RAISED" prefHeight="50.0" prefWidth="200.0"
+                   style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Enter Key"
+                   textFill="#d7dadb">
+            <VBox.margin>
+                <Insets top="30.0"/>
+            </VBox.margin>
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </JFXButton>
+    </VBox>
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="515.0"/>
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="395.0" minWidth="10.0" prefWidth="285.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <VBox.margin>
+            <Insets top="20.0"/>
+        </VBox.margin>
+        <JFXTextField fx:id="messageField" focusColor="#fc4349" labelFloat="true" promptText="Message"
+                      unFocusColor="#d7dadb">
+            <GridPane.margin>
+                <Insets left="75.0"/>
+            </GridPane.margin>
+        </JFXTextField>
+        <JFXButton onAction="#onEncrypt" prefWidth="150.0"
+                   style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Encrypt"
+                   textAlignment="CENTER" textFill="#d7dadb" GridPane.columnIndex="1">
+            <GridPane.margin>
+                <Insets left="50.0"/>
+            </GridPane.margin>
+        </JFXButton>
+    </GridPane>
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="515.0"/>
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="395.0" minWidth="10.0" prefWidth="285.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <VBox.margin>
+            <Insets top="20.0"/>
+        </VBox.margin>
+        <JFXTextField fx:id="encryptedMessageField" editable="false" focusColor="#fc4349" labelFloat="true"
+                      promptText="Encrypted Message" unFocusColor="#d7dadb">
+            <GridPane.margin>
+                <Insets left="75.0"/>
+            </GridPane.margin>
+        </JFXTextField>
+        <JFXButton onAction="#onDecrypt" prefWidth="150.0"
+                   style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Decrypt"
+                   textFill="#d7dadb" GridPane.columnIndex="1">
+            <GridPane.margin>
+                <Insets left="50.0"/>
+            </GridPane.margin>
+        </JFXButton>
+    </GridPane>
+    <JFXTextArea fx:id="decryptedMessageField" editable="false" focusColor="#fc4349" labelFloat="true"
+                 promptText="Decrypted Message" unFocusColor="#d7dadb">
+        <VBox.margin>
+          <Insets left="100.0" right="100.0" top="30.0"/>
+        </VBox.margin>
+    </JFXTextArea>
+</VBox>
