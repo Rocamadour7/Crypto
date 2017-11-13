@@ -1,6 +1,10 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
+import java.util.ArrayList;
 
 
 public class Connector {
@@ -8,6 +12,7 @@ public class Connector {
     private static Connection connection;
 
     private static void connect(){
+
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/crypto","root","root");
@@ -17,21 +22,27 @@ public class Connector {
 
     }
 
-    private static ResultSet statement() throws SQLException {
+    public ObservableList<Staff> fetch() throws SQLException {
 
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("Select * FROM staff");
-        while(resultSet.next()){
 
-            System.out.println(resultSet.getString(2)+" "+resultSet.getString(3));
+        ObservableList<Staff> staffList= FXCollections.observableArrayList();
+
+        while(resultSet.next()){
+            int id = Integer.parseInt(resultSet.getString(1));
+            String name =  resultSet.getString(2);
+            String position = resultSet.getString(3);
+
+            Staff staff = new Staff(id, name, position);
+            staffList.add(staff);
 
         }
+        return staffList;
         //connection.close();
-        return resultSet;
     }
 
-    private static void insert(String name, String position) throws SQLException{
-        System.out.println("Adding...");
+    public void insert(String name, String position) throws SQLException{
         String query = " insert into staff (name, position)"
                 + " values (?, ?)";
 
@@ -46,16 +57,4 @@ public class Connector {
         connection.close();
     }
 
-
-    public static void main(String[] args) {
-        connect();
-        try {
-            statement();
-            insert("Tony", "Janitor");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
