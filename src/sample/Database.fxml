@@ -79,7 +79,7 @@
             </JFXButton>
          </VBox>
       </VBox>
-      <JFXTreeTableView prefWidth="420.0">
+      <JFXTreeTableView fx:id="staffTable" prefWidth="420.0">
          <HBox.margin>
             <Insets left="10.0" />
          </HBox.margin>
