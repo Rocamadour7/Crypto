@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" prefHeight="563.0" prefWidth="800.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
-    <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" onAction="#goToRSA" prefWidth="200.0" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="RSAwithSHA256" textFill="#d7dadb">
+<HBox alignment="CENTER" prefHeight="563.0" prefWidth="800.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+    <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" onAction="#goToRSA" prefWidth="150.0" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="RSAwithSHA256" textFill="#d7dadb">
         <HBox.margin>
             <Insets right="25.0" />
         </HBox.margin>
@@ -15,7 +15,7 @@
             <Font size="16.0" />
         </font>
     </JFXButton>
-    <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" onAction="#goToBCrypt" prefWidth="200.0" ripplerFill="#d7dadb" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="BCrypt" textFill="#d7dadb">
+    <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" onAction="#goToBCrypt" prefWidth="150.0" ripplerFill="#d7dadb" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="BCrypt" textFill="#d7dadb">
         <HBox.margin>
             <Insets />
         </HBox.margin>
@@ -23,12 +23,17 @@
             <Font size="16.0" />
         </font>
     </JFXButton>
-   <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="435.0" layoutY="276.0" onAction="#goToCaesar" prefWidth="200.0" ripplerFill="#d7dadb" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Caesar" textFill="#d7dadb">
+   <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="435.0" layoutY="276.0" onAction="#goToCaesar" prefWidth="150.0" ripplerFill="#d7dadb" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Caesar" textFill="#d7dadb">
       <font>
          <Font size="16.0" />
       </font>
       <HBox.margin>
-         <Insets left="25.0" />
+         <Insets left="25.0" right="25.0" />
       </HBox.margin>
+   </JFXButton>
+   <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="535.0" layoutY="273.0" onAction="#goToDatabase" prefWidth="150.0" ripplerFill="#d7dadb" style="-fx-background-color: #FC4349; -fx-background-radius: 0;" text="Database" textFill="#d7dadb">
+      <font>
+         <Font size="16.0" />
+      </font>
    </JFXButton>
 </HBox>

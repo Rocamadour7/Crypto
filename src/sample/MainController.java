@@ -32,4 +32,9 @@ public class MainController {
     private void goToCaesar() {
         templateController.show("Caesar.fxml");
     }
+
+    @FXML
+    private void goToDatabase() {
+        templateController.show("Database.fxml");
+    }
 }
