@@ -69,7 +69,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </JFXTextField>
-            <JFXButton buttonType="RAISED" onAction="#onDecrypt" prefWidth="150.0" style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Decrypt" textFill="#d7dadb">
+            <JFXButton fx:id="decryptButton" buttonType="RAISED" onAction="#onDecrypt" prefWidth="150.0" style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Decrypt" textFill="#d7dadb">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
