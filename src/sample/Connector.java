@@ -2,11 +2,12 @@ package sample;
 
 import java.sql.*;
 
+
 public class Connector {
 
-    public static Connection connection;
+    private static Connection connection;
 
-    public static void connect(){
+    private static void connect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/crypto","root","root");
@@ -16,7 +17,7 @@ public class Connector {
 
     }
 
-    public static void statement() throws SQLException {
+    private static ResultSet statement() throws SQLException {
 
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("Select * FROM staff");
@@ -25,18 +26,33 @@ public class Connector {
             System.out.println(resultSet.getString(2)+" "+resultSet.getString(3));
 
         }
+        //connection.close();
+        return resultSet;
+    }
+
+    private static void insert(String name, String position) throws SQLException{
+        System.out.println("Adding...");
+        String query = " insert into staff (name, position)"
+                + " values (?, ?)";
+
+        // create the mysql insert prepared statement
+        PreparedStatement preparedStmt = connection.prepareStatement(query);
+        preparedStmt.setString (1, name);
+        preparedStmt.setString (2, position);
+
+        // execute the prepared statement
+        preparedStmt.execute();
+
         connection.close();
     }
 
-    //Funcion para insertar datos a la base de datos
-    //Funcion que mande a llamar la de encriptacion
-    //diseño singleton
-    //Esa funcion tiene que llmar a esa funcion para validarlos
 
     public static void main(String[] args) {
         connect();
         try {
             statement();
+            insert("Tony", "Janitor");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
