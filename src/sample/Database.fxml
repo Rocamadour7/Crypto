@@ -22,74 +22,66 @@
     </VBox>
    <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
       <VBox.margin>
-         <Insets bottom="40.0" left="40.0" right="40.0" top="10.0"/>
+         <Insets bottom="40.0" left="40.0" right="40.0" top="10.0" />
       </VBox.margin>
       <VBox alignment="CENTER" prefWidth="300.0">
          <HBox.margin>
-            <Insets right="10.0"/>
+            <Insets right="10.0" />
          </HBox.margin>
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
             <Text fill="#d7dadb" strokeType="OUTSIDE" strokeWidth="0.0" text="New Employee">
                <font>
-                  <Font size="24.0"/>
+                  <Font size="24.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="newEmployeeNameField" focusColor="#fc4349" labelFloat="true" promptText="Name"
-                          unFocusColor="#d7dadb">
+            <JFXTextField fx:id="newEmployeeNameField" focusColor="#fc4349" labelFloat="true" promptText="Name" unFocusColor="#d7dadb">
                <VBox.margin>
-                  <Insets top="20.0"/>
+                  <Insets top="20.0" />
                </VBox.margin>
             </JFXTextField>
-            <JFXTextField fx:id="newEmployeePositionField" focusColor="#fc4349" labelFloat="true"
-                          promptText="Position" unFocusColor="#d7dadb">
+            <JFXTextField fx:id="newEmployeePositionField" focusColor="#fc4349" labelFloat="true" promptText="Position" unFocusColor="#d7dadb">
                <VBox.margin>
-                  <Insets top="20.0"/>
+                  <Insets top="30.0" />
                </VBox.margin>
             </JFXTextField>
-            <JFXButton buttonType="RAISED" onAction="#onCreate" prefWidth="150.0"
-                       style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Create"
-                       textFill="#d7dadb">
+            <JFXButton buttonType="RAISED" onAction="#onCreate" prefWidth="150.0" style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Create" textFill="#d7dadb">
                <VBox.margin>
-                  <Insets top="30.0"/>
+                  <Insets top="30.0" />
                </VBox.margin>
                <font>
-                  <Font size="16.0"/>
+                  <Font size="16.0" />
                </font>
             </JFXButton>
          </VBox>
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
             <Text fill="#d7dadb" strokeType="OUTSIDE" strokeWidth="0.0" text="Decrypt Employee">
                <font>
-                  <Font size="24.0"/>
+                  <Font size="24.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="selectedEmployeeName" editable="false" focusColor="#fc4349" labelFloat="true"
-                          promptText="Name" unFocusColor="#d7dadb">
+            <JFXTextField fx:id="selectedEmployeeName" editable="false" focusColor="#fc4349" labelFloat="true" promptText="Name" unFocusColor="#d7dadb">
                <VBox.margin>
-                  <Insets top="20.0"/>
+                  <Insets top="20.0" />
                </VBox.margin>
             </JFXTextField>
-            <JFXTextField fx:id="selectedEmployeePosition" editable="false" focusColor="#fc4349" labelFloat="true"
-                          promptText="Position" unFocusColor="#d7dadb">
+            <JFXTextField fx:id="selectedEmployeePosition" editable="false" focusColor="#fc4349" labelFloat="true" promptText="Position" unFocusColor="#d7dadb">
                <VBox.margin>
-                  <Insets top="20.0"/>
+                  <Insets top="30.0" />
                </VBox.margin>
             </JFXTextField>
-            <JFXButton buttonType="RAISED" onAction="#onDecrypt" prefWidth="150.0"
-                       style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Decrypt"
-                       textFill="#d7dadb">
+            <JFXButton buttonType="RAISED" onAction="#onDecrypt" prefWidth="150.0" style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Decrypt" textFill="#d7dadb">
                <VBox.margin>
-                  <Insets top="30.0"/>
+                  <Insets top="30.0" />
                </VBox.margin>
                <font>
-                  <Font size="16.0"/>
+                  <Font size="16.0" />
                </font>
             </JFXButton>
          </VBox>
       </VBox>
       <JFXTreeTableView prefWidth="420.0">
          <HBox.margin>
-            <Insets left="10.0"/>
+            <Insets left="10.0" />
          </HBox.margin>
       </JFXTreeTableView>
    </HBox>
