@@ -14,6 +14,20 @@
         <URL value="@css/style.css" />
     </stylesheets>
     <HBox alignment="CENTER_RIGHT">
+      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#backToHome">
+         <graphic>
+             <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                 <Image url="@icons/ic_arrow_back_black_24dp/ic_arrow_back_black_24dp_1x.png"/>
+             </ImageView>
+         </graphic>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <HBox.margin>
+            <Insets left="5.0" top="5.0" />
+         </HBox.margin>
+      </JFXButton>
+      <Pane prefHeight="0.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
         <JFXButton fx:id="minimizeButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#minimizeWindow">
             <graphic>
                 <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -39,6 +53,6 @@
         </JFXButton>
     </HBox>
     <Pane fx:id="content">
-        <fx:include fx:id="main" source="main.fxml"/>
+        <fx:include fx:id="main" source="main.fxml" />
     </Pane>
 </VBox>
