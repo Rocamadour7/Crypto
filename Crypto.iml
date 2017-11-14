@@ -6,13 +6,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/sample/css" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/sample/icons" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/sample/database" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jbcrypt" level="project" />
     <orderEntry type="library" name="jfoenix-9.0.0" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
     <orderEntry type="library" name="sqlite-jdbc-3.20.0" level="project" />
   </component>
 </module>

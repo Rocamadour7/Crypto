@@ -17,8 +17,20 @@ class Connector {
     private void connect(){
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:src/sample/database/cryptoDB.sqlite");
+            connection = DriverManager.getConnection("jdbc:sqlite:");
+            createDatabase();
         } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createDatabase() {
+        String query = "CREATE TABLE \"staff\" (\"idstaff\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, \"name\" TEXT NOT NULL, \"position\" TEXT NOT NULL)";
+        PreparedStatement statement;
+        try {
+            statement = connection.prepareStatement(query);
+            statement.execute();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
