@@ -16,8 +16,8 @@ class Connector {
 
     private void connect(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/crypto","root","root");
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/sample/database/cryptoDB.sqlite");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
