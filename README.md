@@ -9,7 +9,7 @@ Software developed for education purposes. Sampling some encryption methods wide
 * [JBCrypt](https://github.com/jeremyh/jBCrypt)
 * [JFoenix](https://github.com/jfoenixadmin/JFoenix)
 
-The project was build using IntelliJ.
+The project was built using IntelliJ.
 
 *You can download a compiled .exe from the [releases](https://github.com/Rocamadour7/Crypto/releases). V1 is only RSA and BCrypt.*
 
