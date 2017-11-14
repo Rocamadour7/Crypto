@@ -33,7 +33,7 @@
                 <Insets left="100.0" right="100.0"/>
             </VBox.margin>
         </JFXTextField>
-        <JFXButton alignment="CENTER" buttonType="RAISED" prefHeight="50.0" prefWidth="200.0"
+        <JFXButton onAction="#onGenerateKey" alignment="CENTER" buttonType="RAISED" prefHeight="50.0" prefWidth="200.0"
                    style="-fx-background-color: #fc4349; -fx-background-radius: 0;" text="Enter Key"
                    textFill="#d7dadb">
             <VBox.margin>

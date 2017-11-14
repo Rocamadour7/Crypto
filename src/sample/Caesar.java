@@ -11,7 +11,7 @@ class Caesar {
 
     public int getShift() { return shift; }
 
-    private void setShift(String key) {
+    void setShift(String key) {
         int sum = 0;
         int index;
 
@@ -42,7 +42,7 @@ class Caesar {
         shift = sum;
     }
 
-    public String encrypt(String plainText) {
+    String encrypt(String plainText) {
 
         plainText = plainText.toLowerCase();
         StringBuilder cipherText = new StringBuilder();
@@ -57,7 +57,7 @@ class Caesar {
         return cipherText.toString();
     }
 
-    public String decrypt(String cipherText) {
+    String decrypt(String cipherText) {
 
         cipherText = cipherText.toLowerCase();
         StringBuilder plainText = new StringBuilder();
