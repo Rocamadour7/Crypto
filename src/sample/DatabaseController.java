@@ -47,33 +47,39 @@ public class DatabaseController {
 
     @FXML
     private void onCreate() {
-        newEmployeeNameField.validate();
-        newEmployeePositionField.validate();
-        String newEmployeeName = newEmployeeNameField.getText();
-        String newEmployeePosition = newEmployeePositionField.getText();
+        boolean nameValid = newEmployeeNameField.validate();
+        boolean positionValid = newEmployeePositionField.validate();
 
-        newEmployeeName = caesar.encrypt(newEmployeeName);
-        newEmployeePosition = caesar.encrypt(newEmployeePosition);
+        if(nameValid && positionValid) {
+            String newEmployeeName = newEmployeeNameField.getText();
+            String newEmployeePosition = newEmployeePositionField.getText();
 
-        try {
-            databaseConnector.insert(newEmployeeName, newEmployeePosition);
-            newEmployeeNameField.setText(null);
-            newEmployeePositionField.setText(null);
-        } catch (SQLException e) {
-            e.printStackTrace();
+            newEmployeeName = caesar.encrypt(newEmployeeName);
+            newEmployeePosition = caesar.encrypt(newEmployeePosition);
+
+            try {
+                databaseConnector.insert(newEmployeeName, newEmployeePosition);
+                newEmployeeNameField.setText(null);
+                newEmployeePositionField.setText(null);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            populateTable();
         }
-
-        populateTable();
     }
 
     @FXML
     private void onDecrypt() {
-        selectedEmployeePosition.validate();
-        String decipherName = caesar.decrypt(selectedEmployeeName.getText());
-        String decipherPosition = caesar.decrypt(selectedEmployeePosition.getText());
-        selectedEmployeeName.setText(decipherName);
-        selectedEmployeePosition.setText(decipherPosition);
-        decryptButton.setDisable(true);
+        boolean selectedValid = selectedEmployeePosition.validate();
+
+        if(selectedValid) {
+            String decipherName = caesar.decrypt(selectedEmployeeName.getText());
+            String decipherPosition = caesar.decrypt(selectedEmployeePosition.getText());
+            selectedEmployeeName.setText(decipherName);
+            selectedEmployeePosition.setText(decipherPosition);
+            decryptButton.setDisable(true);
+        }
     }
 
     private void populateTable() {
